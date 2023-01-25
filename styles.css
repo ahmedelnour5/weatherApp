@@ -45,3 +45,12 @@ header {
   font-family: inherit;
   border-radius: 15px;
 }
+.errorClass {
+  color: red;
+  font-size: 1rem;
+  position: relative;
+  top: 15px;
+  right: 45px;
+  font-weight: bold;
+  visibility: hidden;
+}

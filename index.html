@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/styles.css" rel="stylesheet" />
-    <script src="/script.js"></script>
+
     <title>Weather App</title>
   </head>
   <body>
@@ -15,9 +15,12 @@
     </header>
     <div class="container">
       <form action="#" id="form">
-        <input type="text" placeholder="Enter City Name" class="input-Field" />
-        <button type="submit" class="btn">Submit</button>
+        <input type="text" placeholder="Enter City Name" class="input-Field" /
+        id="city" name="weather_location">
+        <button type="submit" class="btn" id="submitBtn">Submit</button>
       </form>
+      <p class="errorClass">Please Enter a city</p>
     </div>
+    <script src="/script.js"></script>
   </body>
 </html>
