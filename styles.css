@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 *,
 *::before,
 *::after {
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   background-color: #fefedf;
 }
@@ -28,7 +28,7 @@ header {
 }
 
 .img-wrapper {
-  background-image: url("/photo1.jpg");
+  background-image: url('/photo1.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -53,4 +53,31 @@ header {
   right: 45px;
   font-weight: bold;
   visibility: hidden;
+}
+
+.card {
+  background-color: #00c9a7;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 300px;
+  height: 300px;
+  font-size: 0.9em;
+  font-weight: 600;
+  position: relative;
+  left: 37%;
+  margin-top: 15px;
+}
+
+#cityTitle {
+  margin: 0;
+  font-size: 3rem;
+}
+
+#temperature {
+  padding: 10px;
+  font-size: 1.5em;
 }

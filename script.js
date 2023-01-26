@@ -1,10 +1,10 @@
 // front end
-const submitBtn = document.getElementById('submitBtn');
+const form = document.getElementById('form');
 let userCity = document.getElementById('city');
 const errorMsg = document.querySelector('.errorClass');
 let container = document.querySelector('.container');
 
-submitBtn.addEventListener('click', getLocation);
+form.addEventListener('submit', getLocation);
 
 //location
 let city;
@@ -52,34 +52,35 @@ const weatherCreator = (cityName, temperature, feelsLike, humidity, wind) => {
 
 //function to print elements to DOM
 function print(req) {
-  //create div elements for Card container,header,body,and footer.
+  //create div element for Card container
   let card = document.createElement('div');
-  let cardHeader = document.createElement('div');
-  let cardBody = document.createElement('div');
-  let cardFooter = document.createElement('div');
   //create h3 to display city name
   let title = document.createElement('h3');
+  title.setAttribute('id', 'cityTitle');
   //create p elements to display other weather object properties
   let cardTemp = document.createElement('p');
+  cardTemp.setAttribute('id', 'temperature');
   let cardFeels = document.createElement('p');
+  cardFeels.setAttribute('id', 'feels');
   let cardHumidity = document.createElement('p');
+  cardHumidity.setAttribute('id', 'humid');
   let cardWind = document.createElement('p');
+  cardWind.setAttribute('id', 'wind');
   //set the text of created elements to the object values
   title.innerText = reqWeather.cityName;
-  cardTemp.innerText = reqWeather.temperature;
-  cardFeels.innerText = reqWeather.feelsLike;
-  cardHumidity.innerText = reqWeather.humidity;
-  cardWind.innerText = reqWeather.wind.speed + 'mph';
+  cardTemp.innerHTML = reqWeather.temperature + '&#8457;';
+  cardFeels.innerHTML = 'Feels Like: ' + reqWeather.feelsLike + '&#8457;';
+  cardHumidity.innerText = 'Humidity: ' + reqWeather.humidity + ' %';
+  cardWind.innerText = 'Wind: ' + reqWeather.wind.speed + 'mph';
 
   //append elements
-  cardHeader.appendChild(title);
-  cardBody.appendChild(cardTemp);
-  cardFooter.appendChild(cardFeels);
-  cardFooter.appendChild(cardHumidity);
-  cardFooter.appendChild(cardWind);
-  card.appendChild(cardHeader);
-  card.appendChild(cardBody);
-  card.appendChild(cardFooter);
+  card.appendChild(title);
+  card.appendChild(cardTemp);
+  card.appendChild(cardFeels);
+  card.appendChild(cardHumidity);
+  card.appendChild(cardWind);
+
+  card.classList.add('card');
   //append card to DOM
   container.appendChild(card);
 }
